@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Rejestracja";
+}
+
+<div class="text-center">
+    <h1 class="display-4"></h1>
+</div>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center text-light bg-secondary py-3">
+                    <h4 class="mb-0">Rejestracja</h4>
+                </div>
+                <div class="card-body p-4">
+                    <div class="border p-3">
+                        <form>
+                            <div class="form-floating py-2 col-12">
+                                <input type="text" class="form-control border-0 shadow" id="username" name="username" required>
+                                <label class="ms-2" for="username">Imię</label>
+                            </div>
+                            <div class="form-floating py-2 col-12">
+                                <input type="text" class="form-control border-0 shadow" id="surname" name="surname" required>
+                                <label class="ms-2" for="surname">Nazwisko</label>
+                            </div>
+                            <div class="form-floating py-2 col-12">
+                                <input type="number" class="form-control border-0 shadow" id="age" name="age" required>
+                                <label class="ms-2" for="age">Wiek</label>
+                            </div>
+                            <div class="form-floating py-2 col-12">
+                                <input type="email" class="form-control border-0 shadow" id="email" name="email" required>
+                                <label class="ms-2" for="email">E-mail</label>
+                            </div>
+                            <div class="form-floating py-2 col-12">
+                                <input type="password" class="form-control border-0 shadow" id="password" name="password" required>
+                                <label class="ms-2" for="password">Hasło</label>
+                            </div>
+                            <div class="form-floating py-2 col-12">
+                                <input type="password" class="form-control border-0 shadow" id="confirmPassword" name="confirmPassword" required>
+                                <label class="ms-2" for="confirmPassword">Potwierdź hasło</label>
+                            </div>
+                            <br />
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn btn-secondary btn-lg">Zarejestruj się</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

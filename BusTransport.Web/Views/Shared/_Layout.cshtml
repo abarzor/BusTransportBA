@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Bus Transport</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/BusTransport.Web.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-left">
+                    <a class="navbar-brand" asp-area="Passenger" asp-controller="Home" asp-action="Index"><i class="bi bi-bus-front-fill h2"></i></a>
+                </div>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item navItemCustomZakup border-bottom border-light border-2">
+                            <a class="nav-link text-light" asp-area="Admin" asp-controller="TicketPurchase" asp-action="TicketPurchase">Zakup Biletu</a>
+                        </li>
+
+                        <li class="nav-item dropdown clientPanelMain border-bottom border-light border-2 ">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Panel klienta</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item ml-2" asp-area="Admin" asp-controller="PassengerPanel" asp-action="CompletedCourse">Historia kursów</a>
+                                <a class="dropdown-item ml-2" asp-area="Admin" asp-controller="PassengerPanel" asp-action="TicketReturn">Zwróć bilet</a>
+                                <a class="dropdown-item ml-2" asp-area="Admin" asp-controller="PassengerPanel" asp-action="PassengerDetails">Twoje dane</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item navItemCustom border-bottom border-light border-2">
+                            <a class="nav-link text-light" asp-area="Admin" asp-controller="PlanTrip" asp-action="PlanTrip">Zaplanuj podróż</a>
+                        </li>
+                        <li class="nav-item navLogin btn btn-secondary">
+                            <a class="nav-link text-light" asp-area="Admin" asp-controller="LoginRegister" asp-action="Login">Logowanie / rejestracja</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <partial name="_Notification" />
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-light bg-secondary rounded mt-4">
+        <div class="moving-square"><img src="~/resources/pictures/busbottom.svg" /></div>
+        <div class="container">
+            &copy; 2023 - BusTransport.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

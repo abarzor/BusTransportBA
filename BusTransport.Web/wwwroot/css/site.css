@@ -1,0 +1,186 @@
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+    background-color: #d3d2ca;
+}
+
+header {
+    margin: 10px;
+    border-radius: 15px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #d3d2ca;
+}
+
+.navLogin {
+    margin-left: auto;
+    border-color: whitesmoke;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 1.5px;
+}
+
+.navHome {
+    margin-right: auto;
+}
+
+.navMiddle {
+    margin-left: auto;
+}
+/*------------------------------------------------------*/
+.clientPanelMain {
+    color: black;
+    font-size: 20px;
+}
+
+.navItemCustomZakup {
+    font-size: 20px;
+    justify-content: center;
+    margin-right: 40px;
+}
+
+.navItemCustom {
+    font-size: 20px;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.dropdown-item {
+    font-size: 20px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/*menu bez przycisków*/
+.dropdown-menu {
+    border-color: black;
+    border-style: solid;
+    border-radius: 15px;
+    width: 200px;
+    padding-right: 20px;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInDown 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.clientPanelMain:hover .dropdown-menu {
+    animation: fadeInDown 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#map {
+    height: 70em;
+    border-radius: 15px;
+}
+
+.nav-item.dropdown.clientPanelMain .nav-link {
+    color: whitesmoke;
+}
+
+.nav-item {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+}
+
+#form-container {
+    width: 70%;
+    float: left;
+    padding: 20px;
+}
+
+.nav-item:hover {
+    background-color: #8c9ca8;
+    border-color: #8c9ca8;
+    border-style: solid;
+    border-radius: 15px;
+}
+
+.navbar-brand {
+    padding-top: 10px;
+    color: whitesmoke;
+    width: 50px;
+    height: 50px;
+    border: 2px solid whitesmoke;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+    .navbar-brand:hover {
+        color: #6196bf;
+        border-color: #6196bf;
+        transform: scale(1.1);
+    }
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70%;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+option {
+    font-size: 18px;
+    color: azure;
+    background-color: #828f85;
+}
+
+.moving-square {
+    position: absolute;
+    animation: moveSquare 10s linear infinite;
+    margin-top: -40px;
+}
+
+@keyframes moveSquare {
+    0%, 100% {
+        left: 0;
+    }
+
+    50% {
+        left: calc(100% - 100px);
+    }
+}

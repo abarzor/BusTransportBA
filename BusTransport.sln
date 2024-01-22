@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusTransport.Web", "BusTransport.Web\BusTransport.Web.csproj", "{28CFD77F-3432-4BCC-975A-D48E060FD8F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusTransport.DataAccess", "BusTransport.DataAccess\BusTransport.DataAccess.csproj", "{967A0B0C-A9D8-45DD-8C14-B025FFEA0275}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusTransport.Model", "BusTransport.Model\BusTransport.Model.csproj", "{CF46793D-333C-4DE4-906F-FE5D3D0A20DC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusTransport.Console", "BusTransport.Console\BusTransport.Console.csproj", "{2010CB85-013D-4727-8C3B-9576D09330AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusTransport.Mobile", "BusTransport.Mobile\BusTransport.Mobile.csproj", "{A21F1105-D3B3-4549-97E0-29E61362E47B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusTransport.Utility", "BusTransport.Utility\BusTransport.Utility.csproj", "{717721A2-CB4C-4CF6-8EB0-B64C8C2F3E78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28CFD77F-3432-4BCC-975A-D48E060FD8F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28CFD77F-3432-4BCC-975A-D48E060FD8F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28CFD77F-3432-4BCC-975A-D48E060FD8F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28CFD77F-3432-4BCC-975A-D48E060FD8F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{967A0B0C-A9D8-45DD-8C14-B025FFEA0275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{967A0B0C-A9D8-45DD-8C14-B025FFEA0275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{967A0B0C-A9D8-45DD-8C14-B025FFEA0275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{967A0B0C-A9D8-45DD-8C14-B025FFEA0275}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF46793D-333C-4DE4-906F-FE5D3D0A20DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF46793D-333C-4DE4-906F-FE5D3D0A20DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF46793D-333C-4DE4-906F-FE5D3D0A20DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF46793D-333C-4DE4-906F-FE5D3D0A20DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2010CB85-013D-4727-8C3B-9576D09330AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2010CB85-013D-4727-8C3B-9576D09330AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2010CB85-013D-4727-8C3B-9576D09330AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2010CB85-013D-4727-8C3B-9576D09330AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A21F1105-D3B3-4549-97E0-29E61362E47B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A21F1105-D3B3-4549-97E0-29E61362E47B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A21F1105-D3B3-4549-97E0-29E61362E47B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A21F1105-D3B3-4549-97E0-29E61362E47B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A21F1105-D3B3-4549-97E0-29E61362E47B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A21F1105-D3B3-4549-97E0-29E61362E47B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{717721A2-CB4C-4CF6-8EB0-B64C8C2F3E78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{717721A2-CB4C-4CF6-8EB0-B64C8C2F3E78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{717721A2-CB4C-4CF6-8EB0-B64C8C2F3E78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{717721A2-CB4C-4CF6-8EB0-B64C8C2F3E78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3EFAF024-EBB0-4394-9474-BEFDDB7FCB5C}
+	EndGlobalSection
+EndGlobal

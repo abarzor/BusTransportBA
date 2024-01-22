@@ -1,0 +1,61 @@
+﻿@model List<Passenger>
+
+@{
+    ViewData["Title"] = "Twoje dane";
+}
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary ml-0 py-0">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Twoje dane</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card-body p-4 bg-light shadow border-0">
+    <div class="row pb-3">
+        <div class="col-6"></div>
+    </div>
+
+    @foreach (var passenger in Model.Where(p => p.Passenger_Id == 1))
+    {
+        <div class="row mb-3 border-bottom pb-3">
+            <div class="col-3">
+                <label class="fw-bold text-uppercase">Imię:</label>
+            </div>
+            <div class="col-9">
+                <span class="text-dark">@passenger.Name</span>
+            </div>
+        </div>
+
+        <div class="row mb-3 border-bottom pb-3">
+            <div class="col-3">
+                <label class="fw-bold text-uppercase">Nazwisko:</label>
+            </div>
+            <div class="col-9">
+                <span class="text-dark">@passenger.Surname</span>
+            </div>
+        </div>
+
+        <div class="row mb-3 border-bottom pb-3">
+            <div class="col-3">
+                <label class="fw-bold text-uppercase">Wiek:</label>
+            </div>
+            <div class="col-9">
+                <span class="text-dark">@passenger.Age</span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-3">
+                <label class="fw-bold text-uppercase">E-mail:</label>
+            </div>
+            <div class="col-9">
+                <span class="text-dark">@passenger.Email</span>
+            </div>
+        </div>
+    }
+</div>
+
