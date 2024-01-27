@@ -5,6 +5,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Areas\Identity\Data\**" />
+    <Content Remove="Areas\Identity\Data\**" />
+    <EmbeddedResource Remove="Areas\Identity\Data\**" />
+    <None Remove="Areas\Identity\Data\**" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\BusTransport.DataAccess\BusTransport.DataAccess.csproj" />
     <ProjectReference Include="..\BusTransport.Model\BusTransport.Model.csproj" />
   </ItemGroup>
@@ -26,8 +32,5 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0" />
     <PackageReference Include="NetTopologySuite" Version="2.5.0" />
     <PackageReference Include="NetTopologySuite.IO.SqlServerBytes" Version="2.1.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\Identity\Data\" />
   </ItemGroup>
 </Project>
