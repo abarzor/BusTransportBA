@@ -13,6 +13,8 @@ namespace BusTransport.DataAccess
         }
 
         #region DB SETS
+       
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Bus> Buses { get; set; }
         public DbSet<BusStop> BusStops { get; set; }
         public DbSet<Course> Courses { get; set; }
