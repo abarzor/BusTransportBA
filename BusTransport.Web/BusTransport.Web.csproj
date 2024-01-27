@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BusTransport.DataAccess\BusTransport.DataAccess.csproj" />
     <ProjectReference Include="..\BusTransport.Model\BusTransport.Model.csproj" />
+    <ProjectReference Include="..\BusTransport.Utility\BusTransport.Utility.csproj" />
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
