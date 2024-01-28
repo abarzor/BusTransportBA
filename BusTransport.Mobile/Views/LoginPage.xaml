@@ -3,10 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BusTransport.Mobile.Views.LoginPage"
              Title="LoginPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    
+    <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
+        <Entry x:Name="UsernameEntry"
+               Placeholder="Username"
+               ReturnType="Next" />
+
+        <Entry x:Name="PasswordEntry"
+               Placeholder="Password"
+               IsPassword="true"
+               ReturnType="Done" />
+
+        <Button Text="Login"
+                Command="{Binding LoginCommand}"
+                VerticalOptions="End" />
     </VerticalStackLayout>
 </ContentPage>
