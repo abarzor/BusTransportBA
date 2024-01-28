@@ -5,6 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const busLayout = document.querySelector('.bus-layout');
     const numberOfSeats = 52;
+    const takenSeatsCount = Math.floor(Math.random() * numberOfSeats); // Random number of taken seats
 
     for (let i = 1; i <= numberOfSeats; i++) {
         const seat = document.createElement('div');
@@ -13,10 +14,31 @@ document.addEventListener('DOMContentLoaded', () => {
         busLayout.appendChild(seat);
 
         seat.addEventListener('click', () => {
-            seat.style.backgroundColor = seat.style.backgroundColor === 'green' ? 'lightgrey' : 'green';
+            if (!seat.classList.contains('taken')) { // Only toggle if seat is not taken
+                seat.style.backgroundColor = seat.style.backgroundColor === 'green' ? 'lightgrey' : 'green';
+            }
         });
     }
+
+    // Randomly mark some seats as taken
+    markRandomSeatsAsTaken(busLayout, takenSeatsCount);
 });
+
+function markRandomSeatsAsTaken(busLayout, count) {
+    const seats = busLayout.querySelectorAll('.seat');
+    const takenIndices = new Set();
+
+    while (takenIndices.size < count) {
+        const randomIndex = Math.floor(Math.random() * seats.length);
+        takenIndices.add(randomIndex);
+    }
+
+    takenIndices.forEach(index => {
+        const seat = seats[index];
+        seat.style.backgroundColor = '#778da9';
+        seat.classList.add('taken'); // Add 'taken' class to prevent toggling
+    });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     var today = new Date().toISOString().split('T')[0];
