@@ -2,7 +2,7 @@
 
 <div class="container mt-4">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-9">
             <div class="card shadow card">
                 <div class="card-header text-center text-light bg-secondary bg-gradient py-3">
                     <h4 class="mb-0">Zakup biletu</h4>
@@ -24,11 +24,18 @@
                                 <label class="ms-2">Przystanek końcowy</label>
                                 <span asp-validation-for="BusStop.BusStop_Id" class="text-danger"></span>
                             </div>
-                            <div class="form-floating py-2 col-12">
+@*                             <div class="form-floating py-2 col-12">
                                 <input asp-for=Ticket.SeatNumber class="form-control border-0 shadow">
                                 <label class="ms-2" >Numer siedzenia</label>
                                 <span asp-validation-for="Ticket.SeatNumber" class="text-danger"></span>
+                            </div> *@
+                            <label class="ms-2 m-4 text-center">Numer siedzenia</label>
+                            <div class="busSeats">
+                                <div class="seat driver-seat"><span>D</span></div>
+                                <div class="bus-layout">                                  
+                                </div>
                             </div>
+
                             <div class="form-floating py-2 col-12">
                                 <input asp-for=Ticket.DepartureDate class="form-control border-0 shadow">
                                 <label class="ms-2" >Data podróży</label>
