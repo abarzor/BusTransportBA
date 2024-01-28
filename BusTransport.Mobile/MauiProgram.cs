@@ -1,7 +1,6 @@
 ﻿using BusTransport.Mobile.Services;
 using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Controls;
-using static ObjCRuntime.Dlfcn;
 using System.Runtime.Intrinsics.X86;
 using BusTransport.Mobile.Views;
 

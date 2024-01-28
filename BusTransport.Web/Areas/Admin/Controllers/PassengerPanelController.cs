@@ -1,6 +1,6 @@
 ﻿using BusTransport.DataAccess.Repository.IRepository;
-using BusTransport.Model.Models;
 using Microsoft.AspNetCore.Mvc;
+using BusTransport.Model.Models;
 
 namespace BusTransport.Web.Areas.Admin.Controllers
 {
@@ -17,7 +17,7 @@ namespace BusTransport.Web.Areas.Admin.Controllers
         public IActionResult PassengerDetails()
         {
             //List<Passenger> objPassengerList = _unitOfWork?.Passenger?.GetAll()?.ToList() ?? new List<Passenger>();
-            List<Passenger> objPassengerList = _unitOfWork.Passenger.GetAll().ToList();
+            List<BusTransport.Model.Models.Passenger> objPassengerList = _unitOfWork.Passenger.GetAll().ToList();
             return View(objPassengerList);
         }
 
@@ -26,7 +26,7 @@ namespace BusTransport.Web.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult PassengerDetailsCreate(Passenger obj)
+        public IActionResult PassengerDetailsCreate(BusTransport.Model.Models.Passenger obj)
         {
 
             if (ModelState.IsValid)
@@ -41,12 +41,12 @@ namespace BusTransport.Web.Areas.Admin.Controllers
         public IActionResult PassengerDetailsEdit(int? id)
         {
             if (id == null || id == 0) return NotFound();
-            Passenger? passengerFromDb = _unitOfWork.Passenger.Get(u => u.Passenger_Id == id);
+            BusTransport.Model.Models.Passenger? passengerFromDb = _unitOfWork.Passenger.Get(u => u.Passenger_Id == id);
             if (passengerFromDb == null) return NotFound();
             return View(passengerFromDb);
         }
         [HttpPost]
-        public IActionResult PassengerDetailsEdit(Passenger obj)
+        public IActionResult PassengerDetailsEdit(BusTransport.Model.Models.Passenger obj)
         {
             if (ModelState.IsValid)
             {
@@ -61,7 +61,7 @@ namespace BusTransport.Web.Areas.Admin.Controllers
         {
             if (id == null || id == 0) return NotFound();
 
-            Passenger? passengerFromDb = _unitOfWork.Passenger.Get(u => u.Passenger_Id == id);
+            BusTransport.Model.Models.Passenger? passengerFromDb = _unitOfWork.Passenger.Get(u => u.Passenger_Id == id);
 
             if (passengerFromDb == null) return NotFound();
             return View(passengerFromDb);
@@ -69,7 +69,7 @@ namespace BusTransport.Web.Areas.Admin.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult PassengerDeletePOST(int? id)
         {
-            Passenger? obj = _unitOfWork.Passenger.Get(u => u.Passenger_Id == id);
+            BusTransport.Model.Models.Passenger? obj = _unitOfWork.Passenger.Get(u => u.Passenger_Id == id);
 
             if (obj == null) return NotFound();
             _unitOfWork.Passenger.Remove(obj);

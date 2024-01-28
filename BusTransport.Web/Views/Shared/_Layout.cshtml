@@ -24,9 +24,19 @@
                 </div>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item navItemCustomZakup border-bottom border-light border-2">
-                            <a class="nav-link text-light" asp-area="Admin" asp-controller="TicketPurchase" asp-action="TicketPurchase">Zakup Biletu</a>
-                        </li>
+                        @if (User.IsInRole(StaticDetails.Role_Passenger))
+                        {
+                            <li class="nav-item navItemCustomZakup border-bottom border-light border-2">
+                                <a class="nav-link text-light" asp-area="Admin" asp-controller="TicketPurchase" asp-action="TicketPurchase">Zakup Biletu</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item navItemCustomZakup border-bottom border-light border-2">
+                                <a class="nav-link text-light" asp-area="Passenger" asp-controller="LoggedInOnly" asp-action="LoggedInOnly">Zakup Biletu</a>
+                            </li>
+                        }
+
 
                         <li class="nav-item dropdown clientPanelMain border-bottom border-light border-2 ">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

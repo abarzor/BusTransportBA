@@ -2,11 +2,14 @@
 using BusTransport.DataAccess.Repository.IRepository;
 using BusTransport.Model.Models;
 using BusTransport.Model.ViewModels;
+using BusTransport.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BusTransport.Web.Areas.Admin.Controllers
 {
+    [Authorize(Roles = StaticDetails.Role_Passenger)]
     [Area("Admin")]
     public class TicketPurchaseController : Controller
     {
