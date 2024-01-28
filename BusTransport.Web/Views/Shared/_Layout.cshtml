@@ -42,9 +42,18 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Panel klienta</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item ml-2" asp-area="Admin" asp-controller="PassengerPanel" asp-action="CompletedCourse">Historia kursów</a>
-                                <a class="dropdown-item ml-2" asp-area="Admin" asp-controller="PassengerPanel" asp-action="TicketReturn">Zwróć bilet</a>
-                                <a class="dropdown-item ml-2" asp-area="Admin" asp-controller="PassengerPanel" asp-action="PassengerDetails">Twoje dane</a>
+                                @if (User.IsInRole(StaticDetails.Role_Passenger))
+                                {
+                                    <a class="dropdown-item ml-2" asp-area="Admin" asp-controller="PassengerPanel" asp-action="CompletedCourse">Historia kursów</a>
+                                    <a class="dropdown-item ml-2" asp-area="Admin" asp-controller="PassengerPanel" asp-action="TicketReturn">Zwróć bilet</a>
+                                    <a class="dropdown-item ml-2" asp-area="Admin" asp-controller="PassengerPanel" asp-action="PassengerDetails">Twoje dane</a>
+                                }
+                                else
+                                {
+                                    <a class="dropdown-item ml-2" asp-area="Passenger" asp-controller="LoggedInOnly" asp-action="LoggedInOnly">Historia kursów</a>
+                                    <a class="dropdown-item ml-2" asp-area="Passenger" asp-controller="LoggedInOnly" asp-action="LoggedInOnly">Zwróć bilet</a>
+                                    <a class="dropdown-item ml-2" asp-area="Passenger" asp-controller="LoggedInOnly" asp-action="LoggedInOnly">Twoje dane</a>
+                                }
                             </div>
                         </li>
                         <li class="nav-item navItemCustom border-bottom border-light border-2">
