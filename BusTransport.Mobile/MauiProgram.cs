@@ -1,5 +1,9 @@
 ﻿using BusTransport.Mobile.Services;
 using Microsoft.Extensions.Logging;
+using Microsoft.Maui.Controls;
+using static ObjCRuntime.Dlfcn;
+using System.Runtime.Intrinsics.X86;
+using BusTransport.Mobile.Views;
 
 namespace BusTransport.Mobile
 {
@@ -16,7 +20,7 @@ namespace BusTransport.Mobile
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
             builder.Services.AddSingleton<IAuthenticationService, AuthenticationService>();
-
+            builder.Services.AddTransient<LoginPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();
@@ -26,3 +30,7 @@ namespace BusTransport.Mobile
         }
     }
 }
+
+//Step 4: Setup MainPage with Tabs
+
+//Step 5: Navigation from Login to MainPage
