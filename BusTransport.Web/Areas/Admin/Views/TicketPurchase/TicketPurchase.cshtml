@@ -37,10 +37,10 @@
                             </div>
 
                             <div class="form-floating py-2 col-12">
-                                <input asp-for=Ticket.DepartureDate class="form-control border-0 shadow">
-                                <label class="ms-2" >Data podróży</label>
+                                <input type="date" asp-for="Ticket.DepartureDate" id="departureDate" class="form-control border-0 shadow">
+                                <label class="ms-2" for="departureDate">Data podróży</label>
                                 <span asp-validation-for="Ticket.DepartureDate" class="text-danger"></span>
-                            </div>                          
+                            </div>
                             <div class="form-floating py-2 col-12">
                                 <select asp-for="@Model.Ticket.Discount_Id" asp-items="@Model.DiscountList" class="form-control border-0 shadow">
                                     <option selected default>-- Wybór zniżki --</option>
