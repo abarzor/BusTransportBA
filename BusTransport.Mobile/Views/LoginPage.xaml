@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BusTransport.Mobile.Views.LoginPage"
-             Title="LoginPage">
-    
-    <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
-        <Entry x:Name="UsernameEntry"
-               Placeholder="Username"
-               ReturnType="Next" />
+<ContentPage
+    x:Class="BusTransport.Mobile.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="LoginPage">
 
-        <Entry x:Name="PasswordEntry"
-               Placeholder="Password"
-               IsPassword="true"
-               ReturnType="Done" />
+    <VerticalStackLayout
+        Padding="30"
+        Spacing="25"
+        VerticalOptions="Center">
+        <Entry
+            x:Name="UsernameEntry"
+            Placeholder="Username"
+            ReturnType="Next"
+            Text="{Binding Username, Mode=TwoWay}" />
 
-        <Button Text="Login"
-                Command="{Binding LoginCommand}"
-                VerticalOptions="End" />
+        <Entry
+            x:Name="PasswordEntry"
+            IsPassword="true"
+            Placeholder="Password"
+            ReturnType="Done"
+            Text="{Binding Password, Mode=TwoWay}" />
+
+        <Button
+            Command="{Binding LoginCommand}"
+            Text="Login"
+            VerticalOptions="End" />
+
+        <Label
+            HorizontalOptions="Center"
+            IsVisible="{Binding LoginMessage.Length, Converter={StaticResource StringLengthToBooleanConverter}}"
+            Text="{Binding LoginMessage}"
+            TextColor="Red" />
     </VerticalStackLayout>
 </ContentPage>

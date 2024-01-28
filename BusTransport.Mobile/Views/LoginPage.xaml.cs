@@ -1,10 +1,14 @@
+using BusTransport.Mobile.Services;
+using BusTransport.Mobile.ViewModels;
+
 namespace BusTransport.Mobile.Views;
 
 public partial class LoginPage : ContentPage
 {
-    public LoginPage()
+    public LoginPage(IAuthenticationService authenticationService)
     {
         InitializeComponent();
+        BindingContext = new LoginViewModel(authenticationService);
     }
     private async void OnLoginClicked(object sender, EventArgs e)
     {

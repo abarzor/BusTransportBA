@@ -1,13 +1,47 @@
 ﻿using BusTransport.Mobile.Services;
+using System.ComponentModel;
 using System.Windows.Input;
 
 namespace BusTransport.Mobile.ViewModels
 {
-    public class LoginViewModel
+    public class LoginViewModel : INotifyPropertyChanged
     {
-        public ICommand LoginCommand { get; }
-
+        private string _username;
+        private string _password;
+        private string _loginMessage;
         private readonly IAuthenticationService _authenticationService;
+
+        public string Username
+        {
+            get => _username;
+            set
+            {
+                _username = value;
+                OnPropertyChanged(nameof(Username));
+            }
+        }
+
+        public string Password
+        {
+            get => _password;
+            set
+            {
+                _password = value;
+                OnPropertyChanged(nameof(Password));
+            }
+        }
+
+        public string LoginMessage
+        {
+            get => _loginMessage;
+            set
+            {
+                _loginMessage = value;
+                OnPropertyChanged(nameof(LoginMessage));
+            }
+        }
+
+        public ICommand LoginCommand { get; }
 
         public LoginViewModel(IAuthenticationService authenticationService)
         {
@@ -17,11 +51,7 @@ namespace BusTransport.Mobile.ViewModels
 
         private async Task LoginAsync()
         {
-            // This would be bound to the UI inputs
-            string username = "inputtedUsername";
-            string password = "inputtedPassword";
-
-            var isAuthenticated = await _authenticationService.AuthenticateAsync(username, password);
+            var isAuthenticated = await _authenticationService.AuthenticateAsync(Username, Password);
 
             if (isAuthenticated)
             {
@@ -30,8 +60,14 @@ namespace BusTransport.Mobile.ViewModels
             }
             else
             {
-                // Handle failed login, show an error message, etc.
+                // Update login message to notify the user
+                LoginMessage = "Invalid username or password. Please try again.";
             }
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName) =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
