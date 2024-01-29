@@ -73,7 +73,7 @@ namespace BusTransport.Web.Areas.Identity.Pages.Account.Manage
             /// </summary>
             [DataType(DataType.Password)]
             [Display(Name = "Confirm new password")]
-            [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+            [Compare("NewPassword", ErrorMessage = "Nowe hasła do siebie nie pasują")]
             public string ConfirmPassword { get; set; }
         }
 
