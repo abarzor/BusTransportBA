@@ -45,3 +45,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById('departureDate').value = today;
 });
+
+document.querySelectorAll('.manageNavButton').forEach(item => {
+    item.addEventListener('click', function () {
+        document.querySelectorAll('.manageNavButton').forEach(nav => {
+            nav.classList.remove('active');
+        });
+
+        this.classList.add('active');
+    });
+});

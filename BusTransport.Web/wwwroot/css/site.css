@@ -229,3 +229,19 @@ option {
     margin: auto 0.25rem;
     box-shadow: 0 -2px;
 }
+
+.manageNavButton {
+    transition: background-color 0.3s, border 0.3s; /* Smooth transition for background and border */
+}
+
+    .manageNavButton:hover {
+        background-color: #3a3a3a; /* A bit darker than .bg-secondary */
+        border: 1px solid white;
+        border-radius: 5px; /* Rounded border */
+    }
+
+    .manageNavButton.active {
+        background-color: #3a3a3a; /* Same as hover state */
+        border: 10px solid white;
+        border-radius: 5px;
+    }
