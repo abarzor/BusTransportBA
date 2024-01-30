@@ -55,12 +55,10 @@ namespace BusTransport.Mobile.ViewModels
 
             if (isAuthenticated)
             {
-                // Navigate to the main page with tabs upon successful login
                 await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
             }
             else
             {
-                // Update login message to notify the user
                 LoginMessage = "Invalid username or password. Please try again.";
             }
         }
