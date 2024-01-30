@@ -9,31 +9,25 @@
                 </div>
                 <div class="card-body p-4">
                     <div class="border p-3">
-                        <form method ="post" class="row">
+                        <form method="post" class="row">
                             <div class="form-floating py-2 col-12">
-                                <select asp-for="@Model.BusStop.BusStop_Id" asp-items="@Model.BusStopList" class="form-control border-0 shadow">
+                                <select id="startingBusStop" asp-for="@Model.BusStop.BusStop_Id" asp-items="@Model.BusStopList" class="form-control border-0 shadow">
                                     <option class="p-3 text-lg" selected default>-- Wybierz przystanek startowy --</option>
                                 </select>
-                                <label  class="ms-2">Przystanek startowy</label>
+                                <label class="ms-2">Przystanek startowy</label>
                                 <span asp-validation-for="BusStop.BusStop_Id" class="text-danger"></span>
                             </div>
                             <div class="form-floating py-2 col-12">
-                                <select asp-for="@Model.BusStop.BusStop_Id" asp-items="@Model.BusStopList" class="form-control border-0 shadow">
+                                <select id="endingBusStop" asp-for="@Model.BusStop.BusStop_Id" asp-items="@Model.BusStopList" class="form-control border-0 shadow">
                                     <option selected default>-- Wybierz przystanek końcowy --</option>
                                 </select>
                                 <label class="ms-2">Przystanek końcowy</label>
                                 <span asp-validation-for="BusStop.BusStop_Id" class="text-danger"></span>
                             </div>
-@*                             <div class="form-floating py-2 col-12">
-                                <input asp-for=Ticket.SeatNumber class="form-control border-0 shadow">
-                                <label class="ms-2" >Numer siedzenia</label>
-                                <span asp-validation-for="Ticket.SeatNumber" class="text-danger"></span>
-                            </div> *@
                             <label class="ms-2 m-4 text-center">Numer siedzenia</label>
-                            <div class="busSeats">
+                            <div id="seatSelectionArea" class="busSeats" style="pointer-events: none; opacity: 0.5;">
                                 <div class="seat driver-seat"><span>K</span></div>
-                                <div class="bus-layout">                                  
-                                </div>
+                                <div class="bus-layout"></div>
                             </div>
 
                             <div class="form-floating py-2 col-12">
