@@ -242,6 +242,6 @@ option {
 
     .manageNavButton.active {
         background-color: #3a3a3a; /* Same as hover state */
-        border: 10px solid white;
+        border: 8px solid white;
         border-radius: 5px;
     }
