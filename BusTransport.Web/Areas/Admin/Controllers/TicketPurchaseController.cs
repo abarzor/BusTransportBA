@@ -18,10 +18,7 @@ namespace BusTransport.Web.Areas.Admin.Controllers
         {
             _unitOfWork = unitOfWork;
         }
-        //public IActionResult TicketPurchase()
-        //{
-        //    return View();
-        //}
+
         public IActionResult Index()
         {
             List<Ticket> objTickettList = _unitOfWork.Ticket.GetAll().ToList();
