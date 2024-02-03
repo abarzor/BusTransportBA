@@ -9,28 +9,19 @@
         Padding="30"
         Spacing="25"
         VerticalOptions="Center">
+        <Entry x:Name="usernameEntry" Placeholder="Username" />
         <Entry
-            x:Name="UsernameEntry"
-            Placeholder="Username"
-            ReturnType="Next"
-            Text="{Binding Username, Mode=TwoWay}" />
-
-        <Entry
-            x:Name="PasswordEntry"
+            x:Name="passwordEntry"
             IsPassword="true"
-            Placeholder="Password"
-            ReturnType="Done"
-            Text="{Binding Password, Mode=TwoWay}" />
+            Placeholder="Password" />
 
         <Button
-            Command="{Binding LoginCommand}"
-            Text="Login"
-            VerticalOptions="End" />
-
-        <Label
-            HorizontalOptions="Center"
-            IsVisible="{Binding LoginMessage.Length, Converter={StaticResource StringLengthToBooleanConverter}}"
-            Text="{Binding LoginMessage}"
-            TextColor="Red" />
+            x:Name="loginButton"
+            Clicked="OnLoginClickedAsync"
+            Text="Login" />
+        <Button
+            x:Name="reportProblemButton"
+            Clicked="OnReportProblemClicked"
+            Text="Report a Problem" />
     </VerticalStackLayout>
 </ContentPage>

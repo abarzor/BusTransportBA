@@ -1,4 +1,6 @@
-﻿namespace BusTransport.Mobile
+﻿using BusTransport.Mobile.Views;
+
+namespace BusTransport.Mobile
 {
     public partial class App : Application
     {
@@ -7,6 +9,7 @@
             InitializeComponent();
 
             MainPage = new AppShell();
+            MainPage.Navigation.PushModalAsync(new LoginPage());
         }
     }
 }

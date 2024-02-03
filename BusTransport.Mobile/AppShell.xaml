@@ -9,18 +9,9 @@
     Shell.FlyoutBehavior="Disabled">
 
     <TabBar>
-        <Tab Title="Route" Icon="icon_route.png">
-            <ShellContent ContentTemplate="{DataTemplate views:RoutePage}" />
-        </Tab>
-        <Tab Title="BusMap" Icon="icon_busmap.png">
-            <ShellContent ContentTemplate="{DataTemplate views:BusMapPage}" />
-        </Tab>
-        <Tab Title="StopList" Icon="icon_stoplist.png">
-            <ShellContent ContentTemplate="{DataTemplate views:StopListPage}" />
-        </Tab>
-        <Tab Title="TicketValidation" Icon="icon_ticketvalidation.png">
-            <ShellContent ContentTemplate="{DataTemplate views:TicketValidationPage}" />
-        </Tab>
+        <ShellContent Title="Route" Icon="route_icon.png" ContentTemplate="{DataTemplate views:RoutePage}" />
+        <ShellContent Title="BusMap" Icon="busmap_icon.png" ContentTemplate="{DataTemplate views:BusMapPage}" />
+        <ShellContent Title="StopList" Icon="stoplist_icon.png" ContentTemplate="{DataTemplate views:StopListPage}" />
+        <ShellContent Title="TicketValidation" Icon="ticketvalidation_icon.png" ContentTemplate="{DataTemplate views:TicketValidationPage}" />
     </TabBar>
-
 </Shell>

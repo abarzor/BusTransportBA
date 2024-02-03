@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="BusTransport.Mob.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BusTransport.Mob"
+    xmlns:pages="clr-namespace:BusTransport.Mob.Views"
+    Title="BusTransport.Mob"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <Tab Title="Route">
+            <ShellContent ContentTemplate="{DataTemplate pages:RoutePage}" />
+        </Tab>
+        <Tab Title="BusMap">
+            <ShellContent ContentTemplate="{DataTemplate pages:BusMapPage}" />
+        </Tab>
+        <Tab Title="StopList">
+            <ShellContent ContentTemplate="{DataTemplate pages:StopListPage}" />
+        </Tab>
+        <Tab Title="TicketValidation">
+            <ShellContent ContentTemplate="{DataTemplate pages:TicketValidationPage}" />
+        </Tab>
+    </TabBar>
+</Shell>
