@@ -1,5 +1,4 @@
-﻿﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -13,7 +12,6 @@
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
           crossorigin="" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
-
 </head>
 <body>
     <header>
@@ -36,8 +34,6 @@
                                 <a class="nav-link text-light" asp-area="Passenger" asp-controller="LoggedInOnly" asp-action="LoggedInOnly">Zakup Biletu</a>
                             </li>
                         }
-
-
                         <li class="nav-item dropdown clientPanelMain border-bottom border-light border-2 ">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Panel klienta</a>
@@ -46,22 +42,19 @@
                                 {
                                     <a class="dropdown-item ml-2" asp-area="Admin" asp-controller="PassengerPanel" asp-action="CompletedCourse">Historia kursów</a>
                                     <a class="dropdown-item ml-2" asp-area="Admin" asp-controller="PassengerPanel" asp-action="TicketReturn">Zwróć bilet</a>
-                                    <a class="dropdown-item ml-2" asp-area="Identity" asp-page="/Account/Manage/Index">Twoje dane</a>
+                                    <a class="dropdown-item ml-2" asp-area="Identity" asp-page="/Account/Manage/Index">Zarządzaj kontem</a>
                                 }
                                 else
                                 {
                                     <a class="dropdown-item ml-2" asp-area="Passenger" asp-controller="LoggedInOnly" asp-action="LoggedInOnly">Historia kursów</a>
                                     <a class="dropdown-item ml-2" asp-area="Passenger" asp-controller="LoggedInOnly" asp-action="LoggedInOnly">Zwróć bilet</a>
-                                    <a class="dropdown-item ml-2" asp-area="Passenger" asp-controller="LoggedInOnly" asp-action="LoggedInOnly">Twoje dane</a>
+                                    <a class="dropdown-item ml-2" asp-area="Passenger" asp-controller="LoggedInOnly" asp-action="LoggedInOnly">Zarządzaj kontem</a>
                                 }
                             </div>
                         </li>
                         <li class="nav-item navItemCustom border-bottom border-light border-2">
                             <a class="nav-link text-light" asp-area="Admin" asp-controller="PlanTrip" asp-action="PlanTrip">Zaplanuj podróż</a>
                         </li>
-                        @*                         <li class="nav-item navLogin btn btn-secondary">
-                        <a class="nav-link text-light" asp-area="Admin" asp-controller="LoginRegister" asp-action="Login">Logowanie / rejestracja</a>
-                        </li> *@
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

@@ -62,19 +62,15 @@ document.addEventListener("DOMContentLoaded", function () {
     var seatSelectionArea = document.getElementById('seatSelectionArea');
 
     function updateSeatSelectionArea() {
-        // Check if both dropdowns have a selection other than the first option (index 0)
-        if (startingBusStop.selectedIndex > 0 && endingBusStop.selectedIndex > 0) {
-            // Enable seat selection area
+        if ((startingBusStop.selectedIndex > 0 && endingBusStop.selectedIndex > 0)) {
             seatSelectionArea.style.pointerEvents = 'all';
             seatSelectionArea.style.opacity = 1;
         } else {
-            // Keep seat selection area disabled
             seatSelectionArea.style.pointerEvents = 'none';
             seatSelectionArea.style.opacity = 0.5;
         }
     }
 
-    // Attach the event listener to both dropdowns
     startingBusStop.addEventListener('change', updateSeatSelectionArea);
     endingBusStop.addEventListener('change', updateSeatSelectionArea);
 });
