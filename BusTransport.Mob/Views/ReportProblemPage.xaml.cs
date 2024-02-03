@@ -1,4 +1,4 @@
-namespace BusTransport.Mobile.Views;
+namespace BusTransport.Mob.Views;
 
 public partial class ReportProblemPage : ContentPage
 {
