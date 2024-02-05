@@ -83,7 +83,7 @@ namespace BusTransport.Web.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(20, ErrorMessage = "{0} musi mieć minimum {2} i nie więcej niż {1} znaków.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }
@@ -94,7 +94,7 @@ namespace BusTransport.Web.Areas.Identity.Pages.Account
             /// </summary>
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password", ErrorMessage = "Hasła do siebie nie pasują.")]
             public string ConfirmPassword { get; set; }
 
             [Required]
