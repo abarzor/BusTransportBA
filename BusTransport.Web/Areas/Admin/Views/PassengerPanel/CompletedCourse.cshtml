@@ -2,43 +2,52 @@
     ViewData["Title"] = "Historia kursów";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Wszystkie kursy</h1>
-</div>
-
-<section class="py-5">
-    <div class="container">
-        <h2 class="mb-4">Historia Przejazdów Międzymiastowych</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Data</th>
-                    <th scope="col">Miejsce Początkowe</th>
-                    <th scope="col">Miejsce Docelowe</th>
-                    <th scope="col">Imię i Nazwisko Pasażera</th>
-                    <th scope="col">Kwota Biletu</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>2023-01-15</td>
-                    <td>Warszawa</td>
-                    <td>Kraków</td>
-                    <td>Jan Kowalski</td>
-                    <td>50.00 PLN</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>2023-02-20</td>
-                    <td>Poznań</td>
-                    <td>Wrocław</td>
-                    <td>Anna Nowak</td>
-                    <td>40.00 PLN</td>
-                </tr>
-                <!-- Dodaj więcej wierszy według potrzeb -->
-            </tbody>
-        </table>
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-4">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="py-2 text-white">Wszystkie kursy</h2>
+            </div>
+        </div>
     </div>
-</section>
+    <div class="card-body p-4">
+        <div class="row pt-3">
+            <div class="col-md-12">
+                <section class="py-5">
+                    <div class="container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Data</th>
+                                    <th scope="col">Miejsce Początkowe</th>
+                                    <th scope="col">Miejsce Docelowe</th>
+                                    <th scope="col">Imię i Nazwisko Pasażera</th>
+                                    <th scope="col">Kwota Biletu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>2023-01-15</td>
+                                    <td>Warszawa</td>
+                                    <td>Kraków</td>
+                                    <td>T. Testowy</td>
+                                    <td>50.00 PLN</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>2023-02-20</td>
+                                    <td>Poznań</td>
+                                    <td>Wrocław</td>
+                                    <td>T. Testowy</td>
+                                    <td>40.00 PLN</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
