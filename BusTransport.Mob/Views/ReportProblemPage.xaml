@@ -1,12 +1,49 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BusTransport.Mob.Views.ReportProblemPage"
-             Title="ReportProblemPage">
+<ContentPage
+    x:Class="BusTransport.Mob.Views.ReportProblemPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="ReportProblemPage">
+
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid
+            Padding="10"
+            ColumnDefinitions="5*,*,5*"
+            RowDefinitions="*,5*,*">
+
+            <Label
+                Grid.ColumnSpan="2"
+                Margin="0,0,0,20"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Text="Reporting a Problem" />
+
+            <ListView SeparatorColor="Black"
+                x:Name="EventActionCategoryList" 
+                Grid.Row="1"
+                Grid.Column="0"
+                ItemsSource="{Binding EventActionCategories}"
+                HeightRequest="180">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Entry
+                Grid.Row="1"
+                Grid.Column="2"
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Szczegóły zdarzenia (opcjonalne)" />
+
+            <Button
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Clicked="OnReportProblemClicked"
+                Text="Report a Problem"
+                VerticalOptions="End" />
+
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
