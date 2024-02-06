@@ -2,11 +2,23 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BusTransport.Mob.Views.StopListPage"
-             Title="StopListPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:local="clr-namespace:BusTransport.Mob.ViewModels"
+             Title="Lista przystanków">
+
+    <ScrollView>
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding BusStops}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" ColumnDefinitions="*,*,*">
+                            <Label Text="{Binding StopName}" Grid.Column="0"/>
+                            <Label Text="{Binding Arrival, StringFormat='{}{0:hh\\:mm}'}" Grid.Column="1"/>
+                            <Label Text="{Binding Departure, StringFormat='{}{0:hh\\:mm}'}" Grid.Column="2" HorizontalOptions="End"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+
 </ContentPage>
