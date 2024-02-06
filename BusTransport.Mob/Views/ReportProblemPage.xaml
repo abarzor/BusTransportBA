@@ -3,10 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BusTransport.Mob.Views.ReportProblemPage"
              Title="ReportProblemPage">
+    
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid RowDefinitions="Auto,*,Auto"
+          ColumnDefinitions="*,*"
+          Padding="10">
+
+            <!-- Heading -->
+            <Label Grid.ColumnSpan="2"
+               Text="Reporting a Problem"
+               HorizontalOptions="Center"
+               FontSize="Large"
+               Margin="0,0,0,20"/>
+
+            <!-- Event Action Category List -->
+            <ListView Grid.Row="1"
+                  x:Name="EventActionCategoryList"
+                  ItemsSource="{Binding EventActionCategories}">
+                <!-- Template for list items -->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Content Entry Field -->
+            <Entry Grid.Row="1" Grid.Column="1"
+               Placeholder="Enter content here"
+               HorizontalOptions="FillAndExpand"/>
+
+            <!-- Report a Problem Button -->
+            <Button Grid.Row="2" Grid.ColumnSpan="2"
+                Text="Report a Problem"
+                Clicked="OnReportProblemClicked"/>
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
