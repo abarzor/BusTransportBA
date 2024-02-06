@@ -1,19 +1,104 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BusTransport.Mob.Views.StopListPage"
-             xmlns:local="clr-namespace:BusTransport.Mob.ViewModels"
-             Title="Lista przystanków">
+<ContentPage
+    x:Class="BusTransport.Mob.Views.StopListPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BusTransport.Mob.ViewModels"
+    Title="Lista przystanków">
 
     <ScrollView>
-        <StackLayout>
-            <CollectionView ItemsSource="{Binding BusStops}">
+        <StackLayout Padding="20">
+            <CollectionView
+                Margin="10"
+                BackgroundColor="#F0F0F0"
+                ItemsSource="{Binding BusStops}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Padding="10" ColumnDefinitions="*,*,*">
-                            <Label Text="{Binding StopName}" Grid.Column="0"/>
-                            <Label Text="{Binding Arrival, StringFormat='{}{0:hh\\:mm}'}" Grid.Column="1"/>
-                            <Label Text="{Binding Departure, StringFormat='{}{0:hh\\:mm}'}" Grid.Column="2" HorizontalOptions="End"/>
+                        <Grid
+                            Padding="10"
+                            BackgroundColor="#FFFFFF"
+                            ColumnDefinitions="*,*,*"
+                            ColumnSpacing="15"
+                            RowSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="2" />
+                            </Grid.RowDefinitions>
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="10"
+                                HorizontalTextAlignment="Start"
+                                Text="Przystanek: "
+                                TextColor="#333333"
+                                VerticalOptions="Center" />
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                HorizontalTextAlignment="End"
+                                Text="{Binding StopName}"
+                                TextColor="#333333"
+                                VerticalOptions="Center" />
+
+                            <BoxView
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                BackgroundColor="#333333"
+                                HeightRequest="1"
+                                HorizontalOptions="Fill" />
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="40,0,0,0"
+                                FontAttributes="Bold"
+                                FontSize="10"
+                                HorizontalTextAlignment="Start"
+                                Text="Przyjazd: "
+                                TextColor="#333333"
+                                VerticalOptions="Center" />
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontSize="16"
+                                HorizontalOptions="Center"
+                                Text="{Binding Arrival, StringFormat='{}{0:hh\\:mm}'}"
+                                TextColor="#666666"
+                                VerticalOptions="Center" />
+                            <BoxView
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                BackgroundColor="#666666"
+                                HeightRequest="1"
+                                HorizontalOptions="Fill" />
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Margin="40,0,0,0"
+                                FontAttributes="Bold"
+                                FontSize="10"
+                                HorizontalTextAlignment="Start"
+                                Text="Odjzad: "
+                                TextColor="#333333"
+                                VerticalOptions="Center" />
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                FontSize="16"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Departure, StringFormat='{}{0:hh\\:mm}'}"
+                                TextColor="#666666"
+                                VerticalOptions="Center" />
+                            <BoxView
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                BackgroundColor="#666666"
+                                HeightRequest="1"
+                                HorizontalOptions="Fill" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

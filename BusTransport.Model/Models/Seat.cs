@@ -3,6 +3,6 @@
     public class Seat
     {
         public int Seat_Id { get; set; }
-        public bool isTaken { get; set; } = false;
+        public bool IsTaken { get; set; } = false;
     }
 }

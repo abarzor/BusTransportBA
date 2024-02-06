@@ -6,7 +6,17 @@
     xmlns:local="clr-namespace:BusTransport.Mob"
     xmlns:pages="clr-namespace:BusTransport.Mob.Views"
     Title="BusTransport.Mob"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Disabled"
+    BackgroundColor="LightGrey"
+    ForegroundColor="#000000"
+    TitleColor="Black"
+    DisabledColor="#BDBDBD"
+    UnselectedColor="#656565"
+    TabBarBackgroundColor="#FFFFFF"
+    TabBarTitleColor="#0078D7"
+    TabBarUnselectedColor="#656565"
+    TabBarForegroundColor="#0078D7"
+    >
 
     <TabBar>
         <Tab Title="Trasa">
