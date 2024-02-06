@@ -9,16 +9,16 @@
     Shell.FlyoutBehavior="Disabled">
 
     <TabBar>
-        <Tab Title="Route">
+        <Tab Title="Trasa">
             <ShellContent ContentTemplate="{DataTemplate pages:RoutePage}" />
         </Tab>
-        <Tab Title="BusMap">
+        <Tab Title="Mapa autobusu">
             <ShellContent ContentTemplate="{DataTemplate pages:BusMapPage}" />
         </Tab>
-        <Tab Title="StopList">
+        <Tab Title="Lista przystanków">
             <ShellContent ContentTemplate="{DataTemplate pages:StopListPage}" />
         </Tab>
-        <Tab Title="TicketValidation">
+        <Tab Title="Kasowanie biletu">
             <ShellContent ContentTemplate="{DataTemplate pages:TicketValidationPage}" />
         </Tab>
     </TabBar>
