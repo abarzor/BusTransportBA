@@ -3,40 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BusTransport.Mob.Views.ReportProblemPage"
              Title="ReportProblemPage">
-    
+
     <VerticalStackLayout>
-        <Grid RowDefinitions="Auto,*,Auto"
-          ColumnDefinitions="*,*"
-          Padding="10">
+        <Grid
+        Padding="10"
+        ColumnDefinitions="5*,*,5*"
+        RowDefinitions="*,5*,*">
 
-            <!-- Heading -->
-            <Label Grid.ColumnSpan="2"
-               Text="Reporting a Problem"
-               HorizontalOptions="Center"
-               FontSize="Large"
-               Margin="0,0,0,20"/>
+            <Label
+            Grid.ColumnSpan="2"
+            Margin="0,0,0,20"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            Text="Reporting a Problem" />
 
-            <!-- Event Action Category List -->
-            <ListView Grid.Row="1"
-                  x:Name="EventActionCategoryList"
-                  ItemsSource="{Binding EventActionCategories}">
-                <!-- Template for list items -->
+            <ListView SeparatorColor="Black"
+            x:Name="EventActionCategoryList" 
+            Grid.Row="1"
+            Grid.Column="0"
+            ItemsSource="{Binding EventActionCategories}"
+            HeightRequest="180">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Name}" />
+                        <TextCell Text="{Binding Name}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
-            <!-- Content Entry Field -->
-            <Entry Grid.Row="1" Grid.Column="1"
-               Placeholder="Enter content here"
-               HorizontalOptions="FillAndExpand"/>
+            <Entry
+            Grid.Row="1"
+            Grid.Column="2"
+            HorizontalOptions="FillAndExpand"
+            Placeholder="Szczegóły zdarzenia (opcjonalne)" />
 
-            <!-- Report a Problem Button -->
-            <Button Grid.Row="2" Grid.ColumnSpan="2"
-                Text="Report a Problem"
-                Clicked="OnReportProblemClicked"/>
+            <Button
+            Grid.Row="2"
+            Grid.RowSpan="2"
+            Clicked="OnReportProblemClicked"
+            Text="Report a Problem"
+            VerticalOptions="End" />
+
         </Grid>
     </VerticalStackLayout>
 </ContentPage>
