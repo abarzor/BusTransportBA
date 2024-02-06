@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Maui.LifecycleEvents;
 
 namespace BusTransport.Mob
 {
@@ -15,11 +16,26 @@ namespace BusTransport.Mob
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-#if DEBUG
-    		builder.Logging.AddDebug();
+            // Add this line to configure lifecycle events
+            builder.ConfigureLifecycleEvents(lifecycle =>
+            {
+#if ANDROID
+            lifecycle.AddAndroid(android => android.OnCreate((activity, savedInstanceState) =>
+            {
+                HideStatusBar(activity);
+            }));
 #endif
+            });
 
             return builder.Build();
         }
+
+#if ANDROID
+    private static void HideStatusBar(Android.App.Activity activity)
+    {
+        activity.Window.AddFlags(Android.Views.WindowManagerFlags.Fullscreen);
+        activity.Window.ClearFlags(Android.Views.WindowManagerFlags.ForceNotFullscreen);
+    }
+#endif
     }
 }

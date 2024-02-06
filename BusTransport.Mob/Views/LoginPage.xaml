@@ -7,14 +7,26 @@
 
     <VerticalStackLayout
         Padding="30"
-        Spacing="25"
+        Spacing="20"
         VerticalOptions="Center">
         <Entry x:Name="UsernameEntry" Placeholder="Login" />
         <Entry
             x:Name="PasswordEntry"
             IsPassword="True"
             Placeholder="Hasło" />
-        <Button Clicked="OnLoginClicked" Text="Zaloguj się" />
-        <Button Clicked="OnReportProblemClicked" Text="Zgłoś problem" />
+        <Button
+            Clicked="OnLoginClicked"
+            HeightRequest="60"
+            Text="Zaloguj"
+            WidthRequest="200" />
+        <Button
+            BackgroundColor="White"
+            BorderColor="Black"
+            BorderWidth="2"
+            Clicked="OnReportProblemClicked"
+            HeightRequest="40"
+            Text="Zgłoś problem"
+            TextColor="Black"
+            WidthRequest="200" />
     </VerticalStackLayout>
 </ContentPage>
