@@ -1,41 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BusTransport.Mob.Views.ReportProblemPage"
-             Title="Zgłaszanie problemu">
+<ContentPage
+    x:Class="BusTransport.Mob.Views.ReportProblemPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Zgłaszanie problemu">
 
     <VerticalStackLayout>
         <Grid
-        Padding="10"
-        ColumnDefinitions="5*,*,5*"
-        RowDefinitions="*,5*,*">
+            Padding="10"
+            ColumnDefinitions="5*,*,5*"
+            RowDefinitions="*,5*,*,*">
 
 
-            <ListView SeparatorColor="Black"
-            x:Name="EventActionCategoryList" 
-            Grid.Row="1"
-            Grid.Column="0"
-            ItemsSource="{Binding EventActionCategories}"
-            HeightRequest="180">
+            <ListView
+                x:Name="EventActionCategoryList"
+                Grid.Row="1"
+                Grid.Column="0"
+                HeightRequest="250"
+                ItemsSource="{Binding EventActionCategories}"
+                SeparatorColor="Black">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Name}"/>
+                        <TextCell Text="{Binding Name}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
             <Entry
-            Grid.Row="1"
-            Grid.Column="2"
-            HorizontalOptions="FillAndExpand"
-            Placeholder="Szczegóły zdarzenia (opcjonalne)" />
+                Grid.Row="1"
+                Grid.Column="2"
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Szczegóły zdarzenia (opcjonalne)" />
 
             <Button
-            Grid.Row="2"
-            Grid.RowSpan="2"
-            Clicked="OnReportProblemClicked"
-            Text="Report a Problem"
-            VerticalOptions="End" />
+                Grid.Row="3"
+                Grid.Column="0"
+                BackgroundColor="Gray"
+                Clicked="OnReportProblemClicked"
+                Text="Zgłoś problem"
+                VerticalOptions="End" />
 
         </Grid>
     </VerticalStackLayout>

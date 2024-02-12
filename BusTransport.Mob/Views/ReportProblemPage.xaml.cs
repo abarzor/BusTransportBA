@@ -12,6 +12,6 @@ public partial class ReportProblemPage : ContentPage
 
     private void OnReportProblemClicked(object sender, EventArgs e)
     {
-        DisplayAlert("Report", "Your problem has been reported.", "OK");
+        DisplayAlert("Zg³oszenie poprawne", "Zg³oszenie zosta³o przes³ane dalej", "OK");
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 namespace BusTransport.Mob.ViewModels
 {
@@ -15,9 +10,12 @@ namespace BusTransport.Mob.ViewModels
         {
             EventActionCategories = new ObservableCollection<EventActionCategory>
             {
-                new EventActionCategory { Name = "Category 1" },
-                new EventActionCategory { Name = "Category 2" },
-                // Add more categories as needed
+                new EventActionCategory { Name = "Zdarzenie na drodze" },
+                new EventActionCategory { Name = "Awaria pojazdu" },
+                new EventActionCategory { Name = "Inna kategoria 1" },
+                new EventActionCategory { Name = "Inna kategoria 2" },
+                new EventActionCategory { Name = "Inna kategoria 3" },
+                new EventActionCategory { Name = "Inna kategoria 4" },
             };
         }
         public class EventActionCategory
