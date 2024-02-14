@@ -23,10 +23,10 @@ public partial class LoginPage : ContentPage
         string username = UsernameEntry.Text;
         string password = PasswordEntry.Text;
 
-        if (UsernameEntry.Text == "admin" && PasswordEntry.Text=="admin")
+        if (UsernameEntry.Text == "a" && PasswordEntry.Text=="a")
         {
             // Navigate to the AppShell, which contains your main app structure
-            Application.Current.MainPage = new AppShell();
+            Application.Current.MainPage = new MainPage();
         }
         else
         {

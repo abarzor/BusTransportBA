@@ -51,4 +51,9 @@ public partial class BusMapPage : ContentPage
             }
         }
     }
+
+    public static implicit operator View(BusMapPage v)
+    {
+        return v.Content;
+    }
 }

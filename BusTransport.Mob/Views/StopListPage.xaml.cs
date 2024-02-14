@@ -12,4 +12,8 @@ public partial class StopListPage : ContentPage
         this.BindingContext = _viewModel;
     }
 
+    public static implicit operator View(StopListPage v)
+    {
+        return v.Content;
+    }
 }
