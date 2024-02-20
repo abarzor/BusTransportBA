@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
-using Microsoft.Maui.LifecycleEvents;
+﻿using Microsoft.Maui.LifecycleEvents;
+using ZXing.Net.Maui.Controls;
 
 namespace BusTransport.Mob
 {
@@ -14,7 +14,8 @@ namespace BusTransport.Mob
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+                }) //KONFIGURACJA KAMERY
+                .UseBarcodeReader();
 
             // Add this line to configure lifecycle events
             builder.ConfigureLifecycleEvents(lifecycle =>
