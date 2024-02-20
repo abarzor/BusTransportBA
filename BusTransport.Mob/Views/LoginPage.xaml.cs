@@ -25,7 +25,7 @@ public partial class LoginPage : ContentPage
 
         if (UsernameEntry.Text == "a" && PasswordEntry.Text=="a")
         {
-            Application.Current.MainPage = new MainPage();
+            Application.Current.MainPage = new AppShell();
         }
         else
         {

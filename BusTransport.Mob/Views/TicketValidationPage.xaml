@@ -3,13 +3,8 @@
     x:Class="BusTransport.Mob.Views.TicketValidationPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
     Title="Kasowanie biletu">
-    <VerticalStackLayout>
-        <Label
-            FontAttributes="Bold"
-            FontSize="44"
-            HorizontalOptions="Center"
-            Text="TUTAJ BĘDZIE KASOWANIE BILETU"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+
+    <zxing:CameraBarcodeReaderView x:Name="barcodeReader" BarcodesDetected="barcodeReader_BarcodesDetected" />
 </ContentPage>
