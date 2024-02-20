@@ -25,7 +25,6 @@ public partial class LoginPage : ContentPage
 
         if (UsernameEntry.Text == "a" && PasswordEntry.Text=="a")
         {
-            // Navigate to the AppShell, which contains your main app structure
             Application.Current.MainPage = new MainPage();
         }
         else

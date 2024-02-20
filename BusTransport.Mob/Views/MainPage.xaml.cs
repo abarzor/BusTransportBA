@@ -31,9 +31,16 @@ namespace BusTransport.Mob
             ContentArea.Content = new BusMapPage();
         }
 
-        private void OnStopListPageClicked(object sender, EventArgs e)
+        private async void OnStopListPageClicked(object sender, EventArgs e)
         {
-            ContentArea.Content = new StopListPage();
+            try
+            {
+                ContentArea.Content = new StopListPage();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error: {ex.Message}");
+            }
         }
 
         private void OnTicketValidationPageClicked(object sender, EventArgs e)
