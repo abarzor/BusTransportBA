@@ -19,17 +19,17 @@
     UnselectedColor="#656565">
 
     <TabBar>
-        <Tab Title="Trasa">
-            <ShellContent ContentTemplate="{DataTemplate pages:RoutePage}" Icon="map.png" />
+        <Tab Title="Trasa" Icon="map.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:RoutePage}" />
         </Tab>
-        <Tab Title="Mapa autobusu">
-            <ShellContent ContentTemplate="{DataTemplate pages:BusMapPage}" Icon="seat.png"/>
+        <Tab Title="Mapa autobusu" Icon="seat.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:BusMapPage}" />
         </Tab>
-        <Tab Title="Lista przystanków">
-            <ShellContent ContentTemplate="{DataTemplate pages:StopListPage}" Icon="stop.png"/>
+        <Tab Title="Lista przystanków" Icon="stop.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:StopListPage}" />
         </Tab>
-        <Tab Title="Kasowanie biletu">
-            <ShellContent ContentTemplate="{DataTemplate pages:TicketValidationPage}" Icon="scan.png"/>
+        <Tab Title="Kasowanie biletu" Icon="scan.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:TicketValidationPage}" />
         </Tab>
     </TabBar>
 </Shell>
