@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.LifecycleEvents;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 using ZXing.Net.Maui.Controls;
 
 namespace BusTransport.Mob
@@ -14,8 +15,9 @@ namespace BusTransport.Mob
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                }) //KONFIGURACJA KAMERY
-                .UseBarcodeReader();
+                }) 
+                .UseBarcodeReader()
+                .UseSkiaSharp();
 
             // Add this line to configure lifecycle events
             builder.ConfigureLifecycleEvents(lifecycle =>
