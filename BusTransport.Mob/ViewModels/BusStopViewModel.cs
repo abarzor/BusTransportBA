@@ -10,15 +10,17 @@ namespace BusTransport.Mob.ViewModels
         {
             BusStops = new ObservableCollection<BusStop>
             {
-                new BusStop { StopName = "Miejscowość 1", Arrival = new TimeOnly(8, 0), Departure = new TimeOnly(8, 5) },
-                new BusStop { StopName = "Miejscowość 2", Arrival = new TimeOnly(8, 15), Departure = new TimeOnly(8, 20) },
-                new BusStop { StopName = "Miejscowość 3", Arrival = new TimeOnly(8, 30), Departure = new TimeOnly(8, 35) },
-                new BusStop { StopName = "Miejscowość 4", Arrival = new TimeOnly(8, 30), Departure = new TimeOnly(8, 35) },
-                new BusStop { StopName = "Miejscowość 5", Arrival = new TimeOnly(8, 30), Departure = new TimeOnly(8, 35) },
-                new BusStop { StopName = "Miejscowość 6", Arrival = new TimeOnly(15, 30), Departure = new TimeOnly(8, 35) },
-                new BusStop { StopName = "Miejscowość 7", Arrival = new TimeOnly(16, 30), Departure = new TimeOnly(8, 35) },
-                new BusStop { StopName = "Miejscowość 8", Arrival = new TimeOnly(17, 30), Departure = new TimeOnly(8, 35) },
-                new BusStop { StopName = "Miejscowość 9", Arrival = new TimeOnly(18, 30), Departure = new TimeOnly(8, 35) }
+                new BusStop { StopName = "Warszawa", Arrival = new TimeOnly(8, 0), Departure = new TimeOnly(8, 5) },
+                new BusStop { StopName = "Pruszków", Arrival = new TimeOnly(8, 35), Departure = new TimeOnly(8, 40) },
+                new BusStop { StopName = "Żyrardów", Arrival = new TimeOnly(9, 10), Departure = new TimeOnly(9, 15) },
+                new BusStop { StopName = "Skierniewice", Arrival = new TimeOnly(9, 45), Departure = new TimeOnly(9, 50) },
+                new BusStop { StopName = "Łowicz", Arrival = new TimeOnly(10, 20), Departure = new TimeOnly(10, 25) },
+                new BusStop { StopName = "Sieradz", Arrival = new TimeOnly(10, 55), Departure = new TimeOnly(11, 0) },
+                new BusStop { StopName = "Wieluń", Arrival = new TimeOnly(11, 30), Departure = new TimeOnly(11, 35) },
+                new BusStop { StopName = "Olesno", Arrival = new TimeOnly(12, 5), Departure = new TimeOnly(12, 10) },
+                new BusStop { StopName = "Opole", Arrival = new TimeOnly(12, 40), Departure = new TimeOnly(12, 45) },
+                new BusStop { StopName = "Nysa", Arrival = new TimeOnly(13, 15), Departure = new TimeOnly(13, 20) },
+                new BusStop { StopName = "Kudowa-Zdrój", Arrival = new TimeOnly(13, 50), Departure = new TimeOnly(13, 55) }
             };
         }
     }

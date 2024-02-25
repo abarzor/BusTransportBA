@@ -11,11 +11,10 @@ namespace BusTransport.Mob.ViewModels
             EventActionCategories = new ObservableCollection<EventActionCategory>
             {
                 new EventActionCategory { Name = "Zdarzenie na drodze" },
-                new EventActionCategory { Name = "Awaria pojazdu" },
-                new EventActionCategory { Name = "Inna kategoria 1" },
-                new EventActionCategory { Name = "Inna kategoria 2" },
-                new EventActionCategory { Name = "Inna kategoria 3" },
-                new EventActionCategory { Name = "Inna kategoria 4" },
+                new EventActionCategory { Name = "Problemy techniczne z pojazdem" },
+                new EventActionCategory { Name = "Problem z pasażerem" },
+                new EventActionCategory { Name = "Warunki pogodowe" },
+                new EventActionCategory { Name = "Inne zdarzenie losowe" },
             };
         }
         public class EventActionCategory

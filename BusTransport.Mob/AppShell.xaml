@@ -6,30 +6,30 @@
     xmlns:local="clr-namespace:BusTransport.Mob"
     xmlns:pages="clr-namespace:BusTransport.Mob.Views"
     Title="BusTransport.Mob"
-    Shell.FlyoutBehavior="Disabled"
     BackgroundColor="LightGrey"
-    ForegroundColor="#000000"
-    TitleColor="Black"
     DisabledColor="#BDBDBD"
-    UnselectedColor="#656565"
+    ForegroundColor="#000000"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
     TabBarBackgroundColor="#FFFFFF"
+    TabBarForegroundColor="#0078D7"
     TabBarTitleColor="#0078D7"
     TabBarUnselectedColor="#656565"
-    TabBarForegroundColor="#0078D7"
-    >
+    TitleColor="Black"
+    UnselectedColor="#656565">
 
     <TabBar>
         <Tab Title="Trasa">
-            <ShellContent ContentTemplate="{DataTemplate pages:RoutePage}" />
+            <ShellContent ContentTemplate="{DataTemplate pages:RoutePage}" Icon="map.png" />
         </Tab>
         <Tab Title="Mapa autobusu">
-            <ShellContent ContentTemplate="{DataTemplate pages:BusMapPage}" />
+            <ShellContent ContentTemplate="{DataTemplate pages:BusMapPage}" Icon="seat.png"/>
         </Tab>
         <Tab Title="Lista przystanków">
-            <ShellContent ContentTemplate="{DataTemplate pages:StopListPage}" />
+            <ShellContent ContentTemplate="{DataTemplate pages:StopListPage}" Icon="stop.png"/>
         </Tab>
         <Tab Title="Kasowanie biletu">
-            <ShellContent ContentTemplate="{DataTemplate pages:TicketValidationPage}" />
+            <ShellContent ContentTemplate="{DataTemplate pages:TicketValidationPage}" Icon="scan.png"/>
         </Tab>
     </TabBar>
 </Shell>
