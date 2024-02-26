@@ -6,26 +6,8 @@
     xmlns:local="clr-namespace:BusTransport.Mob.ViewModels"
     Title="Lista przystanków">
 
-    <!--<CollectionView ItemsSource="{Binding BusStops}">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="{Binding StopName}" />
-                    <Label Text="{Binding Arrival}" />
-                    <Label Text="{Binding Departure}" />
-                </StackLayout>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>-->
-
     <ScrollView>
         <StackLayout Padding="20">
-            <Label
-                FontAttributes="Bold"
-                FontSize="20"
-                HorizontalOptions="Center"
-                Text="Lista przystanków"
-                VerticalOptions="Center" />
             <CollectionView
                 Margin="10"
                 BackgroundColor="#F0F0F0"

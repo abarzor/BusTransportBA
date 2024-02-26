@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
+
+
 <ContentPage
     x:Class="BusTransport.Mob.Views.TicketValidationPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -8,3 +10,8 @@
 
     <zxing:CameraBarcodeReaderView x:Name="barcodeReader" BarcodesDetected="barcodeReader_BarcodesDetected" />
 </ContentPage>
+
+
+
+
+

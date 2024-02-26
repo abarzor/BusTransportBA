@@ -6,11 +6,6 @@
     Title="Aktualna trasa"
     >
     <VerticalStackLayout>
-        <Label
-            FontAttributes="Bold"
-            FontSize="44"
-            HorizontalOptions="Center"
-            Text="TUTAJ BĘDZIE MAPA Z TRASĄ"
-            VerticalOptions="Center" />
+
     </VerticalStackLayout>
 </ContentPage>
