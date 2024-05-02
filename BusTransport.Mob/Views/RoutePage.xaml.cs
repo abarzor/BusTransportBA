@@ -17,7 +17,6 @@ public partial class RoutePage : ContentPage
         Content = mapControl;
     }
 
-
     public static implicit operator View(RoutePage v)
     {
         return v.Content;
