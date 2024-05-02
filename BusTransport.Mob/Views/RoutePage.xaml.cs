@@ -1,4 +1,6 @@
-using Mapsui.UI.Maui;
+using Microsoft.Maui.Controls.Maps;
+using Microsoft.Maui.Maps;
+using Map = Microsoft.Maui.Controls.Maps.Map;
 
 namespace BusTransport.Mob.Views;
 
@@ -6,46 +8,32 @@ public partial class RoutePage : ContentPage
 {
     public RoutePage()
     {
-
         InitializeComponent();
-        MapView mapView = new MapView();
 
-        var mapControl = new Mapsui.UI.Maui.MapControl();
-        var map = mapControl.Map;
+        Location location = new Location(52.4641019924326, 19.22456548319925);
 
-        map?.Layers.Add(Mapsui.Tiling.OpenStreetMap.CreateTileLayer());
+        Map map = new Map()
+        {
+            IsShowingUser = true,
+        };
+        map.MapClicked += OnMapClicked;
 
-        //map.Home = n => n.NavigateTo(new MPoint(point.x, point.y), map.Resolutions[12]);
+        void OnMapClicked(object sender, MapClickedEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine($"MapClick: {e.Location.Latitude}, {e.Location.Longitude}");
+        }
 
-
-        var pin = new Pin
+        Pin pin = new Pin
         {
             Label = "Santa Cruz",
             Address = "The city with a boardwalk",
-            Type = PinType.Pin,
-            Position = new Position(54.0756259624659, 21.372695213038302)
+            Type = PinType.Place,
+            Location = new Location(36.9628066, -122.0194722)
         };
-        var line = new Mapsui.UI.Maui.Polyline
-        {
-            StrokeWidth = 15,
-            StrokeColor = Mapsui.UI.Maui.KnownColor.Red
-        };
+        map.Pins.Add(pin);
 
-        line.Positions.Add(new Position(52.196496547335954, 19.305936148042303));
-        line.Positions.Add(new Position(54.6774142842844, -106.27939232261615));
-        //var line = new Polyline
-        //{
-        //    StrokeColor = Mapsui.UI.Maui.KnownColor.Red,
-        //    StrokeWidth = 15,
-        //    Positions =
-        //    {
-        //        new Position (52.196496547335954, 19.305936148042303),
-        //        new Position(54.6774142842844, -106.27939232261615)
-        //    }
-        //};
-        mapView.Drawables.Add(line);
-        //map?.Layers.Add((Mapsui.Layers.ILayer)line);
-        Content = mapControl;
+
+        Content = map;
     }
 
     public static implicit operator View(RoutePage v)

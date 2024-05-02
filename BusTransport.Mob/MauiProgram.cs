@@ -1,5 +1,4 @@
 ﻿using Microsoft.Maui.LifecycleEvents;
-using SkiaSharp.Views.Maui.Controls.Hosting;
 using ZXing.Net.Maui.Controls;
 
 namespace BusTransport.Mob
@@ -11,14 +10,13 @@ namespace BusTransport.Mob
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiMaps()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 })
-                .UseBarcodeReader()
-                .UseSkiaSharp()
-                .UseMauiMaps();
+                .UseBarcodeReader();               
 
             // Add this line to configure lifecycle events
             builder.ConfigureLifecycleEvents(lifecycle =>
