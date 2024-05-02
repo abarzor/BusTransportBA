@@ -15,9 +15,10 @@ namespace BusTransport.Mob
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                }) 
+                })
                 .UseBarcodeReader()
-                .UseSkiaSharp();
+                .UseSkiaSharp()
+                .UseMauiMaps();
 
             // Add this line to configure lifecycle events
             builder.ConfigureLifecycleEvents(lifecycle =>

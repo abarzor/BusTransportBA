@@ -17,7 +17,8 @@ namespace BusTransport.Mob
         {
             try
             {
-                ContentArea.Content = new RoutePage();
+                ContentArea.Content = new RoutePage(
+        );
             }
             catch (Exception ex)
             {
