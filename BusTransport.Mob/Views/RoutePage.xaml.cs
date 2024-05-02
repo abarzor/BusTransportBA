@@ -1,5 +1,6 @@
 using BusTransport.Mob.ViewModels;
 using Microsoft.Maui.Controls.Maps;
+using Microsoft.Maui.Maps;
 using Map = Microsoft.Maui.Controls.Maps.Map;
 
 namespace BusTransport.Mob.Views;
@@ -9,11 +10,13 @@ public partial class RoutePage : ContentPage
     public RoutePage()
     {
         InitializeComponent();
+
         Map map = new Map()
         {
             IsShowingUser = true,
         };
-        
+        map.MoveToRegion(MapSpan.FromCenterAndRadius(new Location(52.42912314215671, 20.577927253227077), 
+            Distance.FromKilometers(100)));
 
         List<LocationStore> Location_Stores = new List<LocationStore> {
             new LocationStore
@@ -52,6 +55,7 @@ public partial class RoutePage : ContentPage
                 Description = "Przystanek przy sklepie Y"
             }
         };
+        
         foreach (var item in Location_Stores)
         {
             Pin pin = new Pin
