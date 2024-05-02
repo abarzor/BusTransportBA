@@ -1,5 +1,5 @@
+using BusTransport.Mob.ViewModels;
 using Microsoft.Maui.Controls.Maps;
-using Microsoft.Maui.Maps;
 using Map = Microsoft.Maui.Controls.Maps.Map;
 
 namespace BusTransport.Mob.Views;
@@ -9,30 +9,75 @@ public partial class RoutePage : ContentPage
     public RoutePage()
     {
         InitializeComponent();
-
-        Location location = new Location(52.4641019924326, 19.22456548319925);
-
         Map map = new Map()
         {
             IsShowingUser = true,
         };
-        map.MapClicked += OnMapClicked;
+        
 
-        void OnMapClicked(object sender, MapClickedEventArgs e)
+        List<LocationStore> Location_Stores = new List<LocationStore> {
+            new LocationStore
+            {
+                Latitude = 52.31427966285411,
+                Longitude = 20.975030951013984,
+                StoreName= "Warszawa",
+                Description = "Przystanek przy sklepie X"
+            },
+            new LocationStore
+            {
+                Latitude = 52.54582070996644,
+                Longitude = 19.69903494277357,
+                StoreName= "P³ock",
+                Description = "Przystanek na dworcu autobusowymX"
+            },
+            new LocationStore
+            {
+                Latitude = 53.54354247011144,
+                Longitude = 18.813339446966882,
+                StoreName= "Grudzi¹dz",
+                Description = "Przystanek na dworcu autobusowymX"
+            },
+            new LocationStore
+            {
+                Latitude = 54.15524822147908,
+                Longitude = 18.813339446966882,
+                StoreName= "Tczew",
+                Description = "Przystanek na dworcu autobusowymX"
+            },
+            new LocationStore
+            {
+                Latitude = 54.42795714690189,
+                Longitude = 18.690886986914272,
+                StoreName= "Gdañsk",
+                Description = "Przystanek przy sklepie Y"
+            }
+        };
+        foreach (var item in Location_Stores)
         {
-            System.Diagnostics.Debug.WriteLine($"MapClick: {e.Location.Latitude}, {e.Location.Longitude}");
+            Pin pin = new Pin
+            {
+                Label = item.StoreName,
+                Type = PinType.Generic,
+                Location = new Location(item.Latitude, item.Longitude),
+                Address = item.Description
+            };
+            map.Pins.Add(pin);
         }
 
-        Pin pin = new Pin
+        Polyline polyline= new Polyline
         {
-            Label = "Santa Cruz",
-            Address = "The city with a boardwalk",
-            Type = PinType.Place,
-            Location = new Location(36.9628066, -122.0194722)
+            StrokeColor = Colors.Red,
+            StrokeWidth = 5,
+            Geopath =
+            {
+                new Location(52.31427966285411,20.975030951013984),
+                new Location(52.54582070996644,19.69903494277357), 
+                new Location(53.54354247011144, 18.813339446966882),
+                new Location(54.15524822147908,18.813339446966882),
+                new Location(54.42795714690189,18.690886986914272)
+            }                 
         };
-        map.Pins.Add(pin);
-
-
+        map.MapElements.Add(polyline);
         Content = map;
     }
 
