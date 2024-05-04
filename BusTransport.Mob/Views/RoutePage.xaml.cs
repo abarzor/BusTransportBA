@@ -10,53 +10,56 @@ public partial class RoutePage : ContentPage
     public RoutePage()
     {
         InitializeComponent();
+        Application.Current.UserAppTheme = AppTheme.Light;
 
         Map map = new Map()
         {
             IsShowingUser = true,
+            IsTrafficEnabled = true,
+            MapType = MapType.Street
         };
         map.MoveToRegion(MapSpan.FromCenterAndRadius(new Location(52.42912314215671, 20.577927253227077), 
             Distance.FromKilometers(100)));
 
-        List<LocationStore> Location_Stores = new List<LocationStore> {
+        List<LocationStore> locationStores = new List<LocationStore> {
             new LocationStore
             {
                 Latitude = 52.31427966285411,
                 Longitude = 20.975030951013984,
                 StoreName= "Warszawa",
-                Description = "Przystanek przy sklepie X"
+                Description = "Przystanek autobusowy znajduje siê na wschodnim krañcu kampusu uniwersyteckiego, obok budynku biblioteki."
             },
             new LocationStore
             {
                 Latitude = 52.54582070996644,
                 Longitude = 19.69903494277357,
                 StoreName= "P³ock",
-                Description = "Przystanek na dworcu autobusowymX"
+                Description = "Przystanek jest zlokalizowany przy po³udniowym wyjœciu z dworca kolejowego, obok stacji taksówek."
             },
             new LocationStore
             {
                 Latitude = 53.54354247011144,
                 Longitude = 18.813339446966882,
                 StoreName= "Grudzi¹dz",
-                Description = "Przystanek na dworcu autobusowymX"
+                Description = "Przystanek autobusowy jest usytuowany przy g³ównym wejœciu do Parku Miejskiego, naprzeciwko fontanny."
             },
             new LocationStore
             {
                 Latitude = 54.15524822147908,
                 Longitude = 18.813339446966882,
                 StoreName= "Tczew",
-                Description = "Przystanek na dworcu autobusowymX"
+                Description = "Przystanek znajduje siê na pó³nocnym krañcu parkingu supermarketu “Biedronka”, tu¿ obok stacji benzynowej"
             },
             new LocationStore
             {
                 Latitude = 54.42795714690189,
                 Longitude = 18.690886986914272,
                 StoreName= "Gdañsk",
-                Description = "Przystanek przy sklepie Y"
+                Description = "Przystanek autobusowy jest zlokalizowany przy skrzy¿owaniu ulic Klonowej i Sosnowej, z ³atwym dojazdem od autostrady A1."
             }
         };
         
-        foreach (var item in Location_Stores)
+        foreach (var item in locationStores)
         {
             Pin pin = new Pin
             {

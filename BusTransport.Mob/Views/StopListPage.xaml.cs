@@ -7,6 +7,7 @@ public partial class StopListPage : ContentPage
     public StopListPage()
     {
         InitializeComponent();
+        Application.Current.UserAppTheme = AppTheme.Light;
         BindingContext = new BusStopViewModel();
     }
 

@@ -6,6 +6,7 @@ public partial class TicketValidationPage : ContentPage
     public TicketValidationPage()
     {
         InitializeComponent();
+        Application.Current.UserAppTheme = AppTheme.Light;
         barcodeReader.Options = new ZXing.Net.Maui.BarcodeReaderOptions
         {
             Formats = ZXing.Net.Maui.BarcodeFormat.QrCode,

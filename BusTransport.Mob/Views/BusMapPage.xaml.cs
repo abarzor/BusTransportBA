@@ -14,6 +14,7 @@ public partial class BusMapPage : ContentPage
     }
     private void InitializeSeats()
     {
+        Application.Current.UserAppTheme = AppTheme.Light;
         seats = new Button[Rows, Columns];
         for (int row = 0; row < Rows; row++)
         {

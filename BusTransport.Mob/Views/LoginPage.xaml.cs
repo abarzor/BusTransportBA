@@ -6,7 +6,8 @@ public partial class LoginPage : ContentPage
 	public LoginPage()
 	{
 		InitializeComponent();
-	}
+        Application.Current.UserAppTheme = AppTheme.Light;
+    }
 
     private async void OnReportProblemClicked(object sender, EventArgs e)
     {

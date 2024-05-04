@@ -7,6 +7,7 @@ public partial class ReportProblemPage : ContentPage
 	public ReportProblemPage()
 	{
 		InitializeComponent();
+        Application.Current.UserAppTheme = AppTheme.Light;
         this.BindingContext = new ReportCategoryViewModel();
     }
 

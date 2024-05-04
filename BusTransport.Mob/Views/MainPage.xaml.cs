@@ -9,16 +9,14 @@ namespace BusTransport.Mob
         public MainPage()
         {
             InitializeComponent();
+            Application.Current.UserAppTheme = AppTheme.Light;
         }
-
-
 
         private void OnRoutePageClicked(object sender, EventArgs e)
         {
             try
             {
-                ContentArea.Content = new RoutePage(
-        );
+                ContentArea.Content = new RoutePage();
             }
             catch (Exception ex)
             {
