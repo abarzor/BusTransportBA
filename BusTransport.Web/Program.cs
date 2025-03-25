@@ -1,10 +1,10 @@
-using BusTransport.DataAccess.Repository.IRepository;
-using BusTransport.DataAccess.Repository;
 using BusTransport.DataAccess;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
+using BusTransport.DataAccess.Repository;
+using BusTransport.DataAccess.Repository.IRepository;
 using BusTransport.Utility;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
